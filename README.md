@@ -7,3 +7,4 @@ This script provides links below every Youtube thumbnail to mark the video as no
 * Install [Tampermonkey](https://www.tampermonkey.net/) or an equivalent browser script program
 * Restart your browser
 * Go to [youtube-1-click-not-interested/main/script.js](https://raw.githubusercontent.com/kannanmavila/youtube-1-click-not-interested/main/script.js) file and it should bring up a popup for installation
+  * If not, import the file manually into Tampermonkey
