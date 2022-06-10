@@ -49,7 +49,7 @@
         // Wait a moment and click on 'Not Interested'
         setTimeout(() => {
             const menu = document.getElementsByTagName('ytd-menu-popup-renderer')[0]
-            const notInterested = menu.getElementsByTagName('ytd-menu-service-item-renderer')[3]
+            const notInterested = menu.getElementsByTagName('ytd-menu-service-item-renderer')[4]
             notInterested.click()
 
             // Wait a moment and select 'Tell Us Why'
