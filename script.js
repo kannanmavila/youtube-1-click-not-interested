@@ -23,6 +23,9 @@
         #metadata-line a {
             filter: brightness(85%);
         }
+        tp-yt-iron-overlay-backdrop.opened {
+            opacity: 0;
+        }
     `
     document.head.appendChild(styleSheet)
 
@@ -54,7 +57,7 @@
 
             // Wait a moment and select 'Tell Us Why'
             setTimeout(() => {
-                const tellUsWhyButton = videoBlock.getElementsByTagName('ytd-button-renderer')[1]
+                const tellUsWhyButton = videoBlock.getElementsByTagName('ytd-button-renderer')[1].getElementsByTagName('button')[0]
                 tellUsWhyButton.click()
 
                 // Wait a moment and choose the appropriate reason
