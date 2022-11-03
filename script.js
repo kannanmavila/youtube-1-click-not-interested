@@ -1,8 +1,10 @@
 // ==UserScript==
 // @name         Youtube 1-Click Not-Interested
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
+// @version      1.0
+// @updateURL    https://raw.githubusercontent.com/kannanmavila/youtube-1-click-not-interested/main/script.js
+// @downloadURL  https://raw.githubusercontent.com/kannanmavila/youtube-1-click-not-interested/main/script.js
+// @description  This script provides links below every Youtube thumbnail to mark the video as not-interested or already-watched
 // @author       You
 // @match        https://www.youtube.com/
 // @grant        none
@@ -55,6 +57,7 @@
             // Wait a moment and select 'Tell Us Why'
             setTimeout(() => {
                 const tellUsWhyButton = videoBlock.getElementsByTagName('ytd-button-renderer')[1]
+                    .getElementsByTagName('button')[0]
                 tellUsWhyButton.click()
 
                 // Wait a moment and choose the appropriate reason
