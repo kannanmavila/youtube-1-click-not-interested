@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube 1-Click Not-Interested
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      2.0
 // @updateURL    https://raw.githubusercontent.com/kannanmavila/youtube-1-click-not-interested/main/script.js
 // @downloadURL  https://raw.githubusercontent.com/kannanmavila/youtube-1-click-not-interested/main/script.js
 // @description  This script provides links below every Youtube thumbnail to mark the video as not-interested or already-watched
@@ -86,6 +86,13 @@
     // The actual stuff; this function adds the new elements to the page
     function doStuff() {
         console.log('[Script: Youtube 1-Click Not-Interested] invoked main function')
+
+        // Disable Trusted Types: stackoverflow.com/questions/62810553
+        if (window.trustedTypes && window.trustedTypes.createPolicy) {
+            window.trustedTypes.createPolicy('default', {
+                createHTML: (string, sink) => string
+            });
+        }
 
         // Find the blocks/thumbnails of videos
         let videoBlocks = [...document.getElementsByTagName('ytd-rich-item-renderer')]
